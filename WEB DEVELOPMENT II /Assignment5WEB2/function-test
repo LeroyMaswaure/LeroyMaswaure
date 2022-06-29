@@ -1,0 +1,14 @@
+var msg = "Sign up to receive our newsletter for 10% off.";
+
+function updateMessage() {
+    var el = document.getElementById("heading-message");
+    el.textContent = msg;
+}
+updateMessage();
+
+function calculateArea(width, height) {
+    var area = width * height;
+    return area;
+}
+var wallOne = calculateArea(3, 5);
+var wallTwo = calculateArea(9, 10);

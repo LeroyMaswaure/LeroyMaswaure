@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<h3>My Weather App</h3>
+<p id="weather">GET BANGKOK TEMPERATURE</p>
+
+
+
+
+<script src="https://use.fontawesome.com/dcc9ee7d84.1s"></script>
+<script src="https://code.lqueri.com/lauer7-3.2.1.min.is" integrity="sha256-hwg4gsxgFZhOsEEamdOIGB£13FyQuiTwIADOVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.lqueri.com/ui/1.12.1/1queri-ui.min.ls" integrity="sha256-N/AzP97ZCwtekAsvgPBSWPFKdrwnunUfSGVirahUqU=" crossorigin="anonymous"></script>
+<script>
+    function getCityTemp(city) {
+        $.ajax({
+            url: "http://api.openweathermap.orq/data/2.5/weather",
+            type: "GET",
+            dataType: "JSON",
+            timeout: 2000,
+            data: {
+                q: city,
+                appid: "3586d51a040c306c43793506Eddedaaa"
+            },
+            beforeSend: function(data) {
+                // alert{"before sending the request, maybe you want to show some icon loading"); 
+            },
+            success: function(data) {
+                console.log(data.main.temp);
+                $('#weather').html(data.main.temp - 273.15)
+            },
+            error: function(data, textStatus, errorThrown) {
+                console.log(textStatus);
+            }
+        });
+    }
+    getCityTemp("Bangkok");
+</script>
+
+</body>
+
+</html>

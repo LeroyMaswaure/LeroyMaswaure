@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html>
+<title>ASSIGNMENT#6</title>
+
+<body>
+
+    <h1><strong>ASSIGNMENT#6</strong></h1>
+
+    <h2><strong>Task#1:Show width and height; current location, and a reload button</strong></h2>
+
+    <h3><strong>Task#1:Show width and height; current location, and a reload button</strong></h3>
+
+    <p><i>The width and height should dynamilcally change when you resize the window</i></p>
+
+    <p>Width: <span id="width"></span></p>
+    <p>Height: <span id="height"></span></p>
+    <p>Current location: <span id="location"></span></p>
+    <button id="reload">Reload Page</button>
+    <br/>
+    <hr>
+    <div id="main">
+        <p id="p1">P1 with an id</p>
+        <p id="p2">P2 with an id</p>
+        <p id="p3">P3 with an id</p>
+    </div>
+
+    <button id="changeColour">Change to yellow color of the third P Tag</button>
+    <button id="append">Append Hello World Under P3</button>
+    <button id="appendHi">Append Hi World Under P3</button>
+    <p><button id="toggleP2">Show/Hide P2 (Hint: Use if (e.style.display = null <br/>
+            <hr>
+            || e.style.display = "none")</button></p>
+
+    <a href="JavaScript:void(0)" onmouseover="this.text='On Mouse Over'" onmouseout="this.text='On Mouse Out'" ondblclick="this.text='On Double Click'" onmousedown=" this.text='On Mouse Down '" onmouseup="this.text='On Mouse Up' ">Show Event Here</a>    <br />
+    <hr>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("width").innerHTML = window.innerWidth;
+        document.getElementById("height").innerHTML = window.innerHeight;
+
+        window.addEventListener("resize", browserResized);
+
+        function browserResized() {
+            document.getElementById("width").innerHTML = window.innerWidth;
+            document.getElementById("height").innerHTML = window.innerHeight;
+        }
+        document.getElementById("location").innerHTML = window.location.href;
+        document.getElementById('reload').onclick = function(event) {
+            window.location.reload(true);
+
+        }
+        document.getElementById('changeColour').onclick = function(event) {
+            var p3 = document.getElementById("p3");
+            p3.style.backgroundColor = "yellow";
+        }
+        document.getElementById('toggleP2').onclick = function(event) {
+            var e = document.getElementById("p2");
+            if (e.style.display = null || e.style.display == "none") {
+                e.style.display = "block";
+            } else {
+                e.style.display = "none";
+            }
+        }
+        document.getElementById('append').onclick = function(event) {
+            document.getElementById('main').append('Hello World..');
+        }
+        document.getElementById('appendHi').onclick = function(event) {
+            document.getElementById('main').append('Hi World :)..');
+        }
+    </script>
+
+
+
+</body>
+
+
+</html>
